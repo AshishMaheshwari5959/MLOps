@@ -25,8 +25,8 @@ sys.stdout = open("output.txt", "w+")
 
 train_datagen = ImageDataGenerator( rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
 test_datagen = ImageDataGenerator(rescale=1./255)
-training_set = train_datagen.flow_from_directory( 'Faces/train/', target_size=(64, 64), batch_size=32, class_mode='categorical')
-test_set = test_datagen.flow_from_directory( 'Faces/validation/', target_size=(64, 64), batch_size=32, class_mode='categorical')
+training_set = train_datagen.flow_from_directory( '/root/Faces/train/', target_size=(64, 64), batch_size=32, class_mode='categorical')
+test_set = test_datagen.flow_from_directory( '/root/Faces/validation/', target_size=(64, 64), batch_size=32, class_mode='categorical')
 
 sys.stdout.close()
 sys.stdout = save
