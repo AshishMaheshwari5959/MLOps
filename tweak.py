@@ -38,8 +38,8 @@ def compiler(x):
     model.compile(optimizer=Adam(learning_rate=x),loss='categorical_crossentropy', metrics=['accuracy'])
     
 def train():  
-    train_data_dir = 'Faces/train/'
-    validation_data_dir = 'Faces/validation/'
+    train_data_dir = '/root/Faces/train/'
+    validation_data_dir = '/root/Faces/validation/'
 
     save =sys.stdout
     sys.stdout = open("output.txt","w+")
