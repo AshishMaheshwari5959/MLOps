@@ -21,7 +21,7 @@ model.add(Dense(units=4, activation = 'softmax'))
 model.compile(optimizer='adam', loss = 'categorical_crossentropy', metrics=['accuracy'])
 
 save = sys.stdout
-sys.stdout = open("output.txt", "w+")
+sys.stdout = open("/root/output.txt", "w+")
 
 train_datagen = ImageDataGenerator( rescale=1./255, shear_range=0.2, zoom_range=0.2, horizontal_flip=True)
 test_datagen = ImageDataGenerator(rescale=1./255)
@@ -34,10 +34,10 @@ sys.stdout = save
 history = model.fit( training_set, steps_per_epoch=100, epochs=10, validation_data=test_set, validation_steps=20, verbose=0)
 
 save = sys.stdout
-sys.stdout = open("accuracy.txt", "w+")
+sys.stdout = open("/root/accuracy.txt", "w+")
 print(100 * history.history['val_accuracy'][-1])
 sys.stdout.close()
 sys.stdout = save
 
 print ("Accuracy of the trained model is : {} %".format ( 100 * history.history['val_accuracy'][-1])) 
-model.save('program.h5')
+model.save('/root/program.h5')
