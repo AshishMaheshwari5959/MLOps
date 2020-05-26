@@ -254,7 +254,7 @@ print("=========================================================================
 print("\n\n\n\nTHE MAXIMUM ACCURACY ACHIEVED IS {}%".format(100*accuracy[index]))
 print("\n\nTHE HYPER-PARAMETERS OF BEST MODEL ARE - ")
 print("Number of Convolutional Layers : {}".format(layer_arr[hyper_parameter[index][4]]))
-if c>4 :
+if (layer_arr[hyper_parameter[index][4]])>3 :
     print("Number of Pooling Layers       : {}".format(2*1))
 else :
     print("Number of Pooling Layers       : {}".format(1))
@@ -269,14 +269,14 @@ sys.stdout = open("/root/best_accuracy.txt","w+")
 print("\n\n\n\nTHE MAXIMUM ACCURACY ACHIEVED IS {}%".format(100*accuracy[index]))
 print("\n\nTHE HYPER-PARAMETERS OF BEST MODEL ARE - ")
 print("Number of Convolutional Layers : {}".format(layer_arr[hyper_parameter[index][4]]))
-if c>4 :
-    print("Number of Pooling Layers       : {}".format(2*1))
+if (layer_arr[hyper_parameter[index][4]])>3 :
+    print("Number of Pooling Layers : {}".format(2*1))
 else :
-    print("Number of Pooling Layers       : {}".format(1))
-print("Number of dense layer          : {}".format(dense_layer_arr[hyper_parameter[index][5]]))
-print("Number of Filters              : {}".format(filter_arr[hyper_parameter[index][0]]))
-print("Size of Kernal                 : {}".format(kernal_arr[hyper_parameter[index][1]]))
-print("Size of Pool                   : {}".format(pool_arr[hyper_parameter[index][2]]))
-print("Size of Dense                  : {}\n".format(dense_arr[hyper_parameter[index][3]]))
+    print("Number of Pooling Layers : {}".format(1))
+print("Number of dense layer : {}".format(dense_layer_arr[hyper_parameter[index][5]]))
+print("Number of Filters : {}".format(filter_arr[hyper_parameter[index][0]]))
+print("Size of Kernal  : {}".format(kernal_arr[hyper_parameter[index][1]]))
+print("Size of Pool : {}".format(pool_arr[hyper_parameter[index][2]]))
+print("Size of Dense : {}\n".format(dense_arr[hyper_parameter[index][3]]))
 sys.stdout.close()
 sys.stdout = save
