@@ -42,7 +42,7 @@ def train():
     validation_data_dir = '/root/Faces/validation/'
 
     save =sys.stdout
-    sys.stdout = open("output.txt","w+")
+    sys.stdout = open("/root/output.txt","w+")
     train_datagen = ImageDataGenerator(
           rescale=1./255,
           rotation_range=20,
@@ -81,7 +81,7 @@ def train():
     sys.stdout.close()
     sys.stdout = save
     
-    checkpoint = ModelCheckpoint("project.h5",
+    checkpoint = ModelCheckpoint("/root/project.h5",
                                  monitor="val_accuracy",
                                  mode="max",
                                  save_best_only = True,
@@ -263,3 +263,20 @@ print("Number of Filters              : {}".format(filter_arr[hyper_parameter[in
 print("Size of Kernal                 : {}".format(kernal_arr[hyper_parameter[index][1]]))
 print("Size of Pool                   : {}".format(pool_arr[hyper_parameter[index][2]]))
 print("Size of Dense                  : {}\n".format(dense_arr[hyper_parameter[index][3]]))
+
+save = sys.stdout
+sys.stdout = open("/root/best_accuracy.txt","w+")
+print("\n\n\n\nTHE MAXIMUM ACCURACY ACHIEVED IS {}%".format(100*accuracy[index]))
+print("\n\nTHE HYPER-PARAMETERS OF BEST MODEL ARE - ")
+print("Number of Convolutional Layers : {}".format(layer_arr[hyper_parameter[index][4]]))
+if c>4 :
+    print("Number of Pooling Layers       : {}".format(2*1))
+else :
+    print("Number of Pooling Layers       : {}".format(1))
+print("Number of dense layer          : {}".format(dense_layer_arr[hyper_parameter[index][5]]))
+print("Number of Filters              : {}".format(filter_arr[hyper_parameter[index][0]]))
+print("Size of Kernal                 : {}".format(kernal_arr[hyper_parameter[index][1]]))
+print("Size of Pool                   : {}".format(pool_arr[hyper_parameter[index][2]]))
+print("Size of Dense                  : {}\n".format(dense_arr[hyper_parameter[index][3]]))
+sys.stdout.close()
+sys.stdout = save
