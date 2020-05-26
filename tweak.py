@@ -81,7 +81,7 @@ def train():
     sys.stdout.close()
     sys.stdout = save
     
-    checkpoint = ModelCheckpoint("/root/project.h5",
+    checkpoint = ModelCheckpoint("/root/tweak.h5",
                                  monitor="val_accuracy",
                                  mode="max",
                                  save_best_only = True,
